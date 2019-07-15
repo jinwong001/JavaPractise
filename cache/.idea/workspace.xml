@@ -2,26 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48fc0436-dda1-4c11-b6fd-20505cffdaab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/CsCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107Provider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/store/DataStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/store/StoreAccessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/store/ValueHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/store/impl/BasicDataStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/store/impl/BasicValueHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/store/impl/LRUDataStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/store/impl/LRUEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/store/impl/WeakValueDataStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wang/store/impl/WeakValueHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/services/javax.cache.spi.CachingProvider" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/wang/CsCache107Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/wang/bean/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spi/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spi/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spi/src/main/java/com/wang/spi/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spi/src/main/java/com/wang/spi/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spi/src/main/java/com/wang/spi/IShout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spi/src/main/java/com/wang/spi/SPIMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spi/src/main/resources/META-INF/services/com.wang.spi.IShout" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wang/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wang/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wang/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wang/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/wang/CsCache107Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/wang/CsCache107Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,7 +24,7 @@
     <session id="282811101">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
@@ -46,14 +35,14 @@
         <counts>
           <entry key="CachingProvider" value="1" />
           <entry key="class" value="8" />
-          <entry key="java" value="28" />
+          <entry key="java" value="30" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="8" />
-          <entry key="JAVA" value="28" />
+          <entry key="JAVA" value="30" />
           <entry key="SPI" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -62,13 +51,13 @@
         <counts>
           <entry key="CachingProvider" value="5" />
           <entry key="dummy" value="18" />
-          <entry key="java" value="4554" />
+          <entry key="java" value="4607" />
           <entry key="xml" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4554" />
+          <entry key="JAVA" value="4607" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="SPI" value="5" />
           <entry key="XML" value="64" />
@@ -82,19 +71,16 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="jar://D:/SDK/repository/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar!/javax/cache/Caching.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="83" column="45" lean-forward="true" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+            <state relative-caret-position="239">
+              <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+              <folding>
+                <element signature="e#959#960#0" expanded="true" />
+                <element signature="e#1020#1021#0" expanded="true" />
+                <element signature="e#2726#2727#0" expanded="true" />
+                <element signature="e#2810#2811#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,12 +89,12 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/services/javax.cache.spi.CachingProvider">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="34" lean-forward="true" selection-start-column="34" selection-end-column="34" />
+              <caret column="34" selection-start-column="34" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107Provider.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
@@ -117,6 +103,18 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#2076#2077#0" expanded="true" />
                 <element signature="e#2126#2127#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107Manager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="78" column="24" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/wang/CsCacheTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="528">
-              <caret line="65" column="6" lean-forward="true" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+              <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#164#179#0" expanded="true" />
@@ -146,11 +144,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/wang/CsCache107Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="16" column="75" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
+            <state relative-caret-position="278">
+              <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#625#668#0" expanded="true" />
@@ -162,7 +160,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://D:/SDK/repository/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar!/javax/cache/CacheManager.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="239">
               <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
             </state>
           </provider>
@@ -172,7 +170,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wang/CsCache.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-372">
-              <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#250#251#0" expanded="true" />
@@ -185,8 +183,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+            <state relative-caret-position="251">
+              <caret line="118" column="45" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#643#649#0" expanded="true" />
@@ -194,6 +192,8 @@
                 <element signature="e#1152#1153#0" expanded="true" />
                 <element signature="e#1494#1495#0" expanded="true" />
                 <element signature="e#1527#1528#0" expanded="true" />
+                <element signature="e#2573#2574#0" expanded="true" />
+                <element signature="e#2613#2614#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -265,7 +265,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
     <option name="width" value="3026" />
@@ -284,6 +284,77 @@
               <item name="cache" type="b2602c69:ProjectViewProjectNode" />
               <item name="cache" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wang" type="462c0819:PsiDirectoryNode" />
+              <item name="jsr107" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cache" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wang" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -295,7 +366,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563182063560" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563184840910" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -422,7 +493,7 @@
       <updated>1563022325188</updated>
       <workItem from="1563022330243" duration="751000" />
       <workItem from="1563162735791" duration="421000" />
-      <workItem from="1563164098141" duration="14354000" />
+      <workItem from="1563164098141" duration="16160000" />
     </task>
     <servers />
   </component>
@@ -453,10 +524,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15526000" />
+    <option name="totallyTimeSpent" value="17332000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1513" height="973" extended-state="7" />
+    <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49795082" visible="true" weight="0.25848925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -618,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/SDK/Java/jdk1.8.0_91/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5815">
-          <caret line="177" column="22" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/SDK/repository/javax/cache/cache-api/1.0.0/cache-api-1.0.0.jar!/javax/cache/Cache.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -636,27 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="509" column="26" selection-start-line="509" selection-start-column="26" selection-end-line="509" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3118">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#2976#2988#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-            <element signature="e#1419#1420#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -732,17 +776,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/SDK/repository/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar!/javax/cache/Caching.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="83" column="45" lean-forward="true" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/wang/CsCacheTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
-          <caret line="65" column="6" lean-forward="true" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+          <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#164#179#0" expanded="true" />
@@ -752,47 +789,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/SDK/repository/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar!/javax/cache/CacheManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/wang/CsCache107Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="16" column="75" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#625#668#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wang/CsCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-372">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#250#251#0" expanded="true" />
             <element signature="e#283#284#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#643#649#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
-            <element signature="e#1527#1528#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -804,10 +808,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/SDK/Java/jdk1.8.0_91/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="302" column="30" lean-forward="true" selection-start-line="302" selection-start-column="30" selection-end-line="302" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/SDK/repository/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar!/javax/cache/Caching.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+          <folding>
+            <element signature="e#959#960#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="true" />
+            <element signature="e#2726#2727#0" expanded="true" />
+            <element signature="e#2810#2811#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/services/javax.cache.spi.CachingProvider">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="34" lean-forward="true" selection-start-column="34" selection-end-column="34" />
+          <caret column="34" selection-start-column="34" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -819,6 +843,51 @@
             <element signature="imports" expanded="true" />
             <element signature="e#2076#2077#0" expanded="true" />
             <element signature="e#2126#2127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="118" column="45" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#643#649#0" expanded="true" />
+            <element signature="e#1115#1116#0" expanded="true" />
+            <element signature="e#1152#1153#0" expanded="true" />
+            <element signature="e#1494#1495#0" expanded="true" />
+            <element signature="e#1527#1528#0" expanded="true" />
+            <element signature="e#2573#2574#0" expanded="true" />
+            <element signature="e#2613#2614#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/SDK/repository/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar!/javax/cache/CacheManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wang/jsr107/CsCache107Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="78" column="24" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/wang/CsCache107Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#625#668#0" expanded="true" />
           </folding>
         </state>
       </provider>

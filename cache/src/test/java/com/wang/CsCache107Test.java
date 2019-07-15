@@ -16,8 +16,11 @@ public class CsCache107Test {
         /**
          *  参考  https://blog.csdn.net/wireless_com/article/details/79277272
          */
+        // 获取缓存提供层对象
         CachingProvider cachingProvider = Caching.getCachingProvider();
+        // 获取缓存管理层对象
         CacheManager manager = cachingProvider.getCacheManager();
+        // 创建缓存实例对象
         Cache<String, User> cache = (Cache<String, User>) manager
                 .<String, User, Configuration<String, User>>createCache("Test",
                         new MutableConfiguration<String, User>());
