@@ -1,6 +1,10 @@
 package com.wang.serialport.ui;
 
+import com.google.gson.Gson;
 import com.wang.serialport.manager.SerialPortManager;
+import com.wang.serialport.model.BillInfo;
+import com.wang.serialport.model.Discount;
+import com.wang.serialport.model.Goods;
 import com.wang.serialport.utils.ByteUtils;
 import com.wang.serialport.utils.ShowUtils;
 import gnu.io.PortInUseException;
@@ -11,6 +15,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -333,5 +338,47 @@ public class MainFrame extends JFrame {
                 new MainFrame().setVisible(true);
             }
         });
+    }
+
+
+    public void startPay() {
+        BillInfo info = new BillInfo();
+        // 收款1毛钱
+        info.amountall = "0.01";
+        // 原来2毛
+        info.amountraw = "0.02";
+        // 优惠1毛
+        info.dscall = "0.01";
+        // 商品 1件
+        info.quantityall = "1";
+        // 1种商品
+        info.countall = "1";
+        // 订单号
+        info.outordernum = "08" + System.currentTimeMillis();
+
+        ArrayList<Discount> discountList = new ArrayList<>();
+        Discount discount = new Discount("新客户", "0.01");
+        discountList.add(discount);
+
+        info.discountslist = new Gson().toJson(discountList);
+
+        ArrayList<Goods> goodsList = new ArrayList<>();
+        Goods goods = new Goods();
+        goods.amount = "1";
+        // 总价两毛
+        goods.amount = "0.02";
+        goods.price = "0.02";
+        goods.unitprice = "0.02";
+        goods.fname = "大白奶糖";
+
+
+        goods.barcode = "6959048901876";
+        goods.goodsid = "0001111";
+
+        goodsList.add(goods);
+
+        info.goodslist = new Gson().toJson(goodsList);
+        String payBill = new Gson().toJson(info);
+        // 订单
     }
 }
