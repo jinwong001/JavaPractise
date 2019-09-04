@@ -175,10 +175,10 @@ public class MainFrame extends JFrame {
             }
         }
 
-        mBaudrateChoice.addItem("9600");
-        mBaudrateChoice.addItem("19200");
-        mBaudrateChoice.addItem("38400");
-        mBaudrateChoice.addItem("57600");
+//        mBaudrateChoice.addItem("9600");
+//        mBaudrateChoice.addItem("19200");
+//        mBaudrateChoice.addItem("38400");
+//        mBaudrateChoice.addItem("57600");
         mBaudrateChoice.addItem("115200");
     }
 
@@ -250,7 +250,7 @@ public class MainFrame extends JFrame {
         // 获取串口名称
         String commName = (String) mCommChoice.getSelectedItem();
         // 获取波特率，默认为9600
-        int baudrate = 9600;
+        int baudrate = 115200;
         String bps = (String) mBaudrateChoice.getSelectedItem();
         baudrate = Integer.parseInt(bps);
 
@@ -293,8 +293,8 @@ public class MainFrame extends JFrame {
                             if (pos >= mData.length) {
                                 String content = DataUtils.getDataCheck(mData, DataUtils.PAY_COD);
                                 mDataView.append(content + "\r\n");
-                                mData=null;
-                                pos=0;
+                                mData = null;
+                                pos = 0;
                             }
                             return;
                         }
@@ -426,6 +426,8 @@ public class MainFrame extends JFrame {
 
         info.goodslist = new Gson().toJson(goodsList);
         String payBill = new Gson().toJson(info);
+
+        System.out.println("payBill:" + payBill);
         return DataUtils.parse(payBill, DataUtils.PAY_COD);
     }
 }

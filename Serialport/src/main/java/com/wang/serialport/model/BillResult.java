@@ -40,8 +40,19 @@ public class BillResult {
 
     /**
      * 支付方式
+     * 01	刷脸付款
+     * 02	扫码付款
      */
     public String paytype;
+
+    /**
+     * 支付渠道
+     * <p>
+     * WXP 微信支付
+     * ALP 支付宝支付
+     *
+     */
+    public String chanCode;
 
     /**
      * 应答码描述

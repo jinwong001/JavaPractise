@@ -53,7 +53,4 @@ public class BillInfo {
      * 合计金额
      */
     public String amountraw;
-
-    public List<Discount> discountList;
-    public List<Goods> goodsList;
 }
