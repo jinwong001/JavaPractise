@@ -118,16 +118,20 @@ public class SerialPortManager {
      */
     public static byte[] readFromPort(SerialPort serialPort) {
         InputStream in = null;
-        byte[] bytes = {};
         try {
             in = serialPort.getInputStream();
             // 缓冲区大小为一个字节
-            byte[] readBuffer = new byte[1];
+            byte[] readBuffer = new byte[1024];
             int bytesNum = in.read(readBuffer);
-            while (bytesNum > 0) {
-                bytes = ArrayUtils.concat(bytes, readBuffer);
-                bytesNum = in.read(readBuffer);
+            if (bytesNum > 0) {
+                byte[] bytes = new byte[bytesNum];
+                System.arraycopy(readBuffer, 0, bytes, 0, bytesNum);
+                return bytes;
             }
+//            while (bytesNum > 0) {
+//                bytes = ArrayUtils.concat(bytes, readBuffer, bytesNum);
+//                bytesNum = in.read(readBuffer);
+//            }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -140,7 +144,7 @@ public class SerialPortManager {
                 e.printStackTrace();
             }
         }
-        return bytes;
+        return null;
     }
 
     /**
@@ -224,7 +228,6 @@ public class SerialPortManager {
          */
         void dataAvailable();
     }
-
 
 
 }

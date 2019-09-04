@@ -20,9 +20,25 @@ public class ArrayUtils {
 		if (firstArray == null || secondArray == null) {
 			return null;
 		}
-		byte[] bytes = new byte[firstArray.length + secondArray.length];
+		return concat(firstArray,secondArray,secondArray.length);
+	}
+
+	/**
+	 * 合并数组
+	 *
+	 * @param firstArray
+	 *            第一个数组
+	 * @param secondArray
+	 *            第二个数组
+	 * @return 合并后的数组
+	 */
+	public static byte[] concat(byte[] firstArray, byte[] secondArray,int length) {
+		if (firstArray == null || secondArray == null) {
+			return null;
+		}
+		byte[] bytes = new byte[firstArray.length + length];
 		System.arraycopy(firstArray, 0, bytes, 0, firstArray.length);
-		System.arraycopy(secondArray, 0, bytes, firstArray.length, secondArray.length);
+		System.arraycopy(secondArray, 0, bytes, firstArray.length, length);
 		return bytes;
 	}
 }

@@ -6,6 +6,7 @@ import com.wang.serialport.model.BillInfo;
 import com.wang.serialport.model.Discount;
 import com.wang.serialport.model.Goods;
 import com.wang.serialport.utils.ByteUtils;
+import com.wang.serialport.utils.DataUtils;
 import com.wang.serialport.utils.ShowUtils;
 import gnu.io.PortInUseException;
 import gnu.io.SerialPort;
@@ -64,11 +65,15 @@ public class MainFrame extends JFrame {
     private JTextArea mDataInput = new JTextArea();
     private JButton mSerialPortOperate = new JButton("打开串口");
     private JButton mSendData = new JButton("发送数据");
+    private JButton mPayData = new JButton("支付");
 
     // 串口列表
     private List<String> mCommList = null;
     // 串口对象
     private SerialPort mSerialport;
+    private byte[] mData;
+    private int pos;
+    private boolean isPay;
 
     public MainFrame() {
         initView();
@@ -144,12 +149,16 @@ public class MainFrame extends JFrame {
         mOperatePanel.add(mDataInput);
 
         mSerialPortOperate.setFocusable(false);
-        mSerialPortOperate.setBounds(45, 95, 90, 20);
+        mSerialPortOperate.setBounds(10, 95, 90, 20);
         mOperatePanel.add(mSerialPortOperate);
 
         mSendData.setFocusable(false);
-        mSendData.setBounds(180, 95, 90, 20);
+        mSendData.setBounds(105, 95, 90, 20);
         mOperatePanel.add(mSendData);
+
+        mPayData.setFocusable(false);
+        mPayData.setBounds(200, 95, 90, 20);
+        mOperatePanel.add(mPayData);
     }
 
     /**
@@ -179,8 +188,6 @@ public class MainFrame extends JFrame {
     private void actionListener() {
         // 串口
         mCommChoice.addPopupMenuListener(new PopupMenuListener() {
-
-            @Override
             public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
                 mCommList = SerialPortManager.findPorts();
                 // 检查是否有可用串口，有则加入选项中
@@ -196,21 +203,18 @@ public class MainFrame extends JFrame {
                 }
             }
 
-            @Override
             public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-                // NO OP
+
             }
 
-            @Override
             public void popupMenuCanceled(PopupMenuEvent e) {
-                // NO OP
+
             }
         });
 
         // 打开|关闭串口
         mSerialPortOperate.addActionListener(new ActionListener() {
 
-            @Override
             public void actionPerformed(ActionEvent e) {
                 if ("打开串口".equals(mSerialPortOperate.getText()) && mSerialport == null) {
                     openSerialPort(e);
@@ -223,9 +227,16 @@ public class MainFrame extends JFrame {
         // 发送数据
         mSendData.addActionListener(new ActionListener() {
 
-            @Override
             public void actionPerformed(ActionEvent e) {
                 sendData(e);
+            }
+        });
+
+        // 发送数据
+        mPayData.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                startPay(e);
             }
         });
     }
@@ -258,10 +269,8 @@ public class MainFrame extends JFrame {
             }
         }
 
-        // 添加串口监听
-        SerialPortManager.addListener(mSerialport, new SerialPortManager.DataAvailableListener() {
 
-            @Override
+        SerialPortManager.addListener(mSerialport, new SerialPortManager.DataAvailableListener() {
             public void dataAvailable() {
                 byte[] data = null;
                 try {
@@ -270,6 +279,25 @@ public class MainFrame extends JFrame {
                     } else {
                         // 读取串口数据
                         data = SerialPortManager.readFromPort(mSerialport);
+                        if (isPay && data != null) {
+                            if (data != null && data.length > 4 && data[0] == (byte) 0x3A && data[1] == (byte) 0x55 && data[4] == DataUtils.PAY_COD) {
+                                int length = DataUtils.bytesToInt(data, 2);
+                                mData = new byte[length + 8];
+                                pos = 0;
+                            }
+                            if (mData == null) {
+                                return;
+                            }
+                            System.arraycopy(data, 0, mData, pos, data.length);
+                            pos += data.length;
+                            if (pos >= mData.length) {
+                                String content = DataUtils.getDataCheck(mData, DataUtils.PAY_COD);
+                                mDataView.append(content + "\r\n");
+                                mData=null;
+                                pos=0;
+                            }
+                            return;
+                        }
 
                         // 以字符串的形式接收数据
                         if (mDataASCIIChoice.isSelected()) {
@@ -308,6 +336,8 @@ public class MainFrame extends JFrame {
      * @param evt 点击事件
      */
     private void sendData(ActionEvent evt) {
+        mData = null;
+        isPay = false;
         // 待发送数据
         String data = mDataInput.getText().toString();
 
@@ -332,6 +362,23 @@ public class MainFrame extends JFrame {
         }
     }
 
+    /**
+     * 发送数据
+     *
+     * @param evt 点击事件
+     */
+    private void startPay(ActionEvent evt) {
+        mData = null;
+        if (mSerialport == null) {
+            ShowUtils.warningMessage("请先打开串口！");
+            return;
+        }
+
+        byte[] data = getPayBytes();
+        SerialPortManager.sendToPort(mSerialport, data);
+        isPay = true;
+    }
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -341,7 +388,7 @@ public class MainFrame extends JFrame {
     }
 
 
-    public void startPay() {
+    public byte[] getPayBytes() {
         BillInfo info = new BillInfo();
         // 收款1毛钱
         info.amountall = "0.01";
@@ -356,13 +403,13 @@ public class MainFrame extends JFrame {
         // 订单号
         info.outordernum = "08" + System.currentTimeMillis();
 
-        ArrayList<Discount> discountList = new ArrayList<>();
+        ArrayList<Discount> discountList = new ArrayList<Discount>();
         Discount discount = new Discount("新客户", "0.01");
         discountList.add(discount);
 
         info.discountslist = new Gson().toJson(discountList);
 
-        ArrayList<Goods> goodsList = new ArrayList<>();
+        ArrayList<Goods> goodsList = new ArrayList<Goods>();
         Goods goods = new Goods();
         goods.amount = "1";
         // 总价两毛
@@ -379,6 +426,6 @@ public class MainFrame extends JFrame {
 
         info.goodslist = new Gson().toJson(goodsList);
         String payBill = new Gson().toJson(info);
-        // 订单
+        return DataUtils.parse(payBill, DataUtils.PAY_COD);
     }
 }
